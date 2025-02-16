@@ -1,17 +1,24 @@
-import React from 'react';
-import { Box } from '@chakra-ui/react';
-import {StyleButton, ButtonTypes, ButtonIcon } from './components/atoms/Button';
-import Header from './components/features/Header';
-import Sidebar from './components/features/SideBar';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Home from './components/pages/Home';
+import LayoutContainer from './components/pages/LayoutContainer';
+import Quiz from './components/pages/Quiz';
+import Create from './components/pages/Create';
+import Config from './components/pages/Config';
 
-function App() {
+const App = () => {
   return (
-    <>
-    <Header />
-    <Sidebar />
-    <Box>
-    </Box>
-    </>
+    <BrowserRouter>
+      <Routes>
+
+        {/*ログイン後*/}
+        <Route element={<LayoutContainer />} >
+          <Route path='/' element={<Home/>} />
+          <Route path='/quiz' element={<Quiz/>} />
+          <Route path='/create' element={<Create/>} />
+          <Route path='/config' element={<Config/>} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

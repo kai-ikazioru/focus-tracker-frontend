@@ -33,9 +33,9 @@ export const StyleButton = (props: Props) => {
 
     return(
         <Button 
-        colorPalette='cyan'
-        variant={buttonType}
-        onClick={onClick ? onClick : undefined}
+            colorPalette='cyan'
+            variant={buttonType}
+            onClick={onClick ? onClick : undefined}
         >
             {icon}
             {text}
